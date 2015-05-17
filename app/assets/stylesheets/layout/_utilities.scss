@@ -7,6 +7,32 @@
   padding-top: 8em;
   padding-bottom: 8em;
 }
+
+.small-padded {
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.padded-right {
+  padding-right: 2em;
+}
+
+.margin-space {
+  margin: 2em;
+}
+
+.margin-top-neg {
+  margin-top: -100px;
+}
+
+.mini-height {
+  height: 800px;
+}
+
+.margin-top {
+  margin-top: 300px;
+}
+
 .bg-red {
   background: $red;
   color: white;

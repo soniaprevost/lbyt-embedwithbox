@@ -1,0 +1,14 @@
+- content_for(:title, 'All Documents')
+
+.container
+  .row
+    .col-sm-12
+      .text-center
+        ul.list-inline
+          li.small-padded.padded-right= link_to '<i class="fa fa-home"></i>'.html_safe, root_path
+          li= link_to '<i class="fa fa-plus"></i>'.html_safe, new_document_path
+    - @documents.each do |doc|
+      .col-sm-6
+        .text-center.small-padded
+          h3
+            = link_to doc.name.upcase, document_path(doc)

@@ -1,0 +1,16 @@
+doctype html
+  html
+    head
+      title= "#{yield(:title) || 'Learning By Teaching'} "
+    meta name="viewport" content="width=device-width, initial-scale=1">
+    = stylesheet_link_tag    "application", media: 'all'
+    meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    = csrf_meta_tags
+
+  body
+
+    = yield
+
+    = javascript_include_tag 'application'
+    = yield(:after_js)
+

@@ -1,0 +1,5 @@
+= simple_form_for(@document, html: { multipart: true }) do |f|
+  p
+    = f.input :name, label: 'Title of your document'
+    = f.input :doc, label: 'Attach file'
+    = f.submit "Upload Document", class:"btn btn-danger"
