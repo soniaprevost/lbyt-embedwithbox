@@ -2,6 +2,7 @@
 
 # #learningbyteaching is a series of workshops from LeWagon's alumni. Here is a clean repository where you can practise with the demo.
 
+# Have a look at the demo
 > http://slides.com/soniaprevost/boxviewrails/
 
 #IMPROVE
