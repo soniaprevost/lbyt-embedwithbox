@@ -1,8 +1,14 @@
 == README
 
-#learningbyteaching is a series of workshop from Wagon's alumni. Here is a clean repository when you can practise with the demo.
+#learningbyteaching is a series of workshops from LeWagon's alumni. Here is a clean repository where you can practise with the demo.
 
-http://slides.com/soniaprevost/boxviewrails/
+>>> http://slides.com/soniaprevost/boxviewrails/
+
+--- IMPROVE
+
+> Manage when Box is not available
+> Make it asynchronous using delayed_job, sidekiq or rescue
+> Do not generate the box_viewer in the view
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
