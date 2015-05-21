@@ -15,4 +15,43 @@ class Document < ActiveRecord::Base
     "application/javascript",
   ]
 
+  def generate_box_document
+    response = HTTParty.post('https://view-api.box.com/1/documents',
+      headers: {
+        'Authorization' => "Token #{ENV['BOX_VIEW_API_KEY']}",
+        'Content-Type' => 'application/json',
+      },
+      body:
+      {
+        url: doc.url,
+        name: doc.name
+      }.to_json
+    )
+  end
+
+  def generate_box_session(document_id)
+    session = HTTParty.post('https://view-api.box.com/1/sessions',
+      headers: {
+        'Authorization' => "Token #{ENV['BOX_VIEW_API_KEY']}",
+        'Content-Type' => 'application/json',
+      },
+      body: {
+        document_id: document_id,
+        expires_at: 90.days.from_now,
+        is_downloadable: true,
+      }.to_json
+    )
+
+    if session.response.code == '201'
+      self.update_column(:box_view_id, session['urls']['view'])
+    elsif session.response.code == '202'
+      generate_box_session(document_id)
+      # raise session.inspect
+    else
+      raise "error"
+    end
+
+  end
+
+
 end

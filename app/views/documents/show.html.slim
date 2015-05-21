@@ -1,2 +1,16 @@
 - content_for(:title, 'Document')
 
+.container
+  .row
+    .col-sm-12
+      .text-center.small-padded
+        = link_to '<i class="fa fa-home"></i>'.html_safe, root_path
+
+    .col-sm-12
+      .text-center
+        - if @document.box_view_url.present?
+          .embed-responsive.embed-responsive-4by3
+            iframe src: "#{@document.box_view_url}", frameborder: "0", allowfullscreen: "allowfullscreen", class: "embed-responsive-item"
+        - else
+          / = @document.box_viewer
+          p Your document is loading... Refresh the page
