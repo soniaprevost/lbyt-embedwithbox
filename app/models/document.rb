@@ -15,6 +15,12 @@ class Document < ActiveRecord::Base
     "application/javascript",
   ]
 
+
+  def box_viewer
+    box_document = generate_box_document
+    generate_box_session(box_document['id'])
+  end
+
   def generate_box_document
     response = HTTParty.post('https://view-api.box.com/1/documents',
       headers: {
@@ -43,12 +49,11 @@ class Document < ActiveRecord::Base
     )
 
     if session.response.code == '201'
-      self.update_column(:box_view_id, session['urls']['view'])
+      self.update_column(:box_view_url, session['urls']['view'])
     elsif session.response.code == '202'
       generate_box_session(document_id)
-      # raise session.inspect
     else
-      raise "error"
+      raise "error while loading, try to upload your doc again"
     end
 
   end

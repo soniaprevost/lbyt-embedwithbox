@@ -10,7 +10,7 @@
       .text-center
         - if @document.box_view_url.present?
           .embed-responsive.embed-responsive-4by3
-            iframe src: "#{@document.box_view_url}", frameborder: "0", allowfullscreen: "allowfullscreen", class: "embed-responsive-item"
+            iframe src=@document.box_view_url class="embed-responsive-item" frameborder="0" allowfullscreen="allowfullscreen"
         - else
-          / = @document.box_viewer
-          p Your document is loading... Refresh the page
+          - @document.box_viewer
+          p Your document is loading...

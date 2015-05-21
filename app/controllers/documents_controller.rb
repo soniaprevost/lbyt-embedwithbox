@@ -12,7 +12,6 @@ class DocumentsController < ApplicationController
     @document = Document.new(document_params)
 
     if @document.save
-      @document.generate_box_document
       redirect_to document_path(@document)
     else
       render :new
