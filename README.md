@@ -1,15 +1,28 @@
-== README
+# Box View Rails
 
-# #learningbyteaching is a series of workshops from LeWagon's alumni. Here is a clean repository where you can practise with the demo.
+This is a clean repository from which you can train yourself to implement Box View.
 
-# Have a look at the demo
-> http://slides.com/soniaprevost/boxviewrails/
+## Learning by Teaching
 
-#IMPROVE
+Learningbyteaching is a series of workshops from [Le Wagon](http://lewagon.org/)'s alumni.
 
-- Manage when Box is not available
-- Make it asynchronous using delayed_job, sidekiq or rescue
-- Do not generate the box_viewer in the view
+Don't miss the next workshop on http://www.meetup.com/Le-Wagon-Paris-Coding-Station/
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Implementation
+
+Workshop slides are available here: http://slides.com/soniaprevost/boxviewrails/
+
+You can also see the solution by [comparing master and boxview branches](https://github.com/soniaprevost/lbyt-embedwithbox/compare/master...boxview).
+
+## Requirements
+
+* ruby 2.2.0
+* bundler
+* PostgreSQL
+
+## Improvements
+
+* Do not generate the box_viewer in the view
+* Extract Box View methods from model to a lib
+* Manage when Box View is not available
+* Make it asynchronous using delayed_job, sidekiq or resque
